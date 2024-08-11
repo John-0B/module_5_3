@@ -40,19 +40,13 @@ class House:
         if not isinstance(other, (int, House)):
             raise ArithmeticError
         self.number_of_floors += other
-        return self.number_of_floors
+        return self
 
     def __iadd__(self, other):
-        if not isinstance(other, (int, House)):
-            raise ArithmeticError
-        self.number_of_floors += other
-        return self.number_of_floors
+        return self.__add__(other)
 
     def __radd__(self, other):
-        if not isinstance(other, (int, House)):
-            raise ArithmeticError
-        self.number_of_floors += other
-        return self.number_of_floors
+        return self.__add__(other)
 
 
 h1 = House('ЖК Эльбрус', 10)
